@@ -27,10 +27,10 @@ angular.module('insight').config(function($routeProvider) {
       templateUrl: 'views/block_list.html',
       title: 'Zcash Blocks solved Today'
     }).
-    when('/blocks-date/:blockDate/:startTimestamp?', {
-      templateUrl: 'views/block_list.html',
-      title: 'Zcash Blocks solved '
-    }).
+	when('/blocks-date/:high/:limit?', {
+		templateUrl: 'views/block_list.html',
+		title: 'Zcash blocks Solved '
+	}).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
       title: 'Zcash Address '

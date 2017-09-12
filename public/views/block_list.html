@@ -6,24 +6,19 @@
         <div class="icon-block text-center">
           <span class="glyphicon glyphicon-list"></span>
           <h3><span translate>Blocks</span> <br> 
-            <span translate>mined on:</span></h3>
+            <span translate>mined</span></h3>
         </div>
       </div>
       <p class="lead text-center m20v">
-      {{pagination.current}} UTC
-      <a href="#" class="btn btn-primary btn-xs" datepicker-popup show-button-bar="false" data-ng-click="openCalendar($event)" data-ng-model="dt" is-open="opened" data-ng-required="true"><span class="glyphicon glyphicon-calendar"></span></a>
+      {{pagination.current}}      
       </p>
       <div class="m20v text-center text-muted" data-ng-if="!pagination.current">
-        <span translate>Loading Selected Date...</span>
+        <span translate>Loading Selected Data...</span>
       </div>
       <div data-ng-if="pagination.current">
-        <p class="lead text-center m20v"  data-ng-show="loading">&nbsp;</p>
-        <p class="text-center m20v"  data-ng-show="pagination.isToday && !loading" translate>Today</p>
-        <p class="text-center m20v"  data-ng-show="!pagination.isToday && !loading">{{humanSince(pagination.currentTs)}}
-        <p class="text-center m20v"  data-ng-show="loading">&nbsp;</p>
         <div class="m50v text-center">
-          <a class="btn btn-primary" href="blocks-date/{{pagination.prev}}"><small>&larr; {{pagination.prev}}</small></a>
-          <a class="btn btn-primary" href="blocks-date/{{pagination.next}}" data-ng-show="!pagination.isToday"><small>{{pagination.next}} &rarr;</small></a>
+          <a class="btn btn-primary" href="blocks-date/{{pagination.prev}}" data-ng-show="!pagination.isToday"><small>&larr; {{pagination.prev}}</small></a>
+          <a class="btn btn-primary" href="blocks-date/{{pagination.next}}" ><small>{{pagination.next}} &rarr;</small></a>
         </div>
       </div>
     </div>
@@ -31,7 +26,6 @@
       <div class="page-header">
         <h1>
           <span translate>Blocks</span>
-          <small><span translate>by date.</span> {{detail}} {{before}}</small>
         </h1>
       </div>
       <table class="table table-hover table-striped">
@@ -58,8 +52,8 @@
         </tbody>
       </table>
       <div data-ng-if="pagination.more">
-        <a class="btn btn-primary" href="blocks-date/{{pagination.current}}" data-ng-show="{{before}}">Lastest block from date</a>
-        <a class="btn btn-primary" href="blocks-date/{{pagination.current}}/{{pagination.moreTs}}">Older blocks from this date</a>
+        <a class="btn btn-primary" href="blocks-from/{{pagination.prev}}" data-ng-show="{{before}}">Newer blocks</a>
+        <a class="btn btn-primary" href="blocks-from/{{pagination.next}}">Older blocks</a>
       </div>
     </div>
   </div>

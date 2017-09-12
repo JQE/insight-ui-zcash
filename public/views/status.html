@@ -30,27 +30,11 @@
               {{sync.error}}
             </span>
           </td>
-          </tr>
+          </tr>          
           <tr>
-            <td translate>Start Date</td>
-            <td class="text-right"><time title="{{sync.startTs | date:'medium'}}">{{humanSince(sync.startTs)}}</time></td>
-          </tr>
-          <tr data-ng-show="sync.endTs">
-            <td translate>Finish Date</td>
-            <td class="text-right"><time title="{{sync.startTs | date:'medium'}}" >{{humanSince(sync.endTs)}}</time></td>
-          </tr>
-          <tr>
-            <td translate>Initial Block Chain Height</td>
+            <td translate>Block Chain Height</td>
             <td class="text-right">{{sync.blockChainHeight}}</td>
-          </tr>
-          <tr>
-            <td translate>Synced Blocks</td>
-            <td class="text-right">{{sync.syncedBlocks}}</td>
-          </tr>
-          <tr>
-            <td translate>Skipped Blocks (previously synced)</td>
-            <td class="text-right">{{sync.skippedBlocks}}</td>
-          </tr>
+          </tr>          
           <tr>
             <td translate>Sync Type</td>
             <td class="text-right">{{sync.type}}</td>

@@ -27,8 +27,8 @@ angular.module('insight.status').controller('StatusController',
     };
 
     var _startSocket = function () {
-      socket.emit('subscribe', 'sync');
-      socket.on('status', function(sync) {
+      socket.emit('subscribe', 'inv');
+      socket.on('sync', function(sync) {
         _onSyncUpdate(sync);
       });
     };
